@@ -133,11 +133,14 @@
                         <execution>
                             <phase>validate</phase>
                             <goals>
+                                <goal>display-discovered-jdk-toolchains</goal>
+                                <goal>select-jdk-toolchain</goal>
                                 <goal>toolchain</goal>
                             </goals>
                         </execution>
                     </executions>
                     <configuration>
+                        <version>[17,)</version>
                         <toolchains>
                             <jdk>
                                 <version>[${testJava}]</version>
