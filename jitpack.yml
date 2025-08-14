@@ -13,3 +13,5 @@ before_install:
 install:
   - 'echo "Running XSeries aggregated core project setup..."'
   - 'mvn clean install -pl core -am -DskipTests=true -Dmaven.test.skip=true -Dgpg.skip=true'
+  - 'echo "Ensuring flattened POM is used..."'
+  - 'find ~/.m2/repository/com/github/cryptomorin/XSeries -name "*.pom" -exec cp core/.flattened-pom.xml {} \;'
